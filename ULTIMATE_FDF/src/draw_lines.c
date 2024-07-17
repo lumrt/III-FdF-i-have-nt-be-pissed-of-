@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 14:58:36 by lumaret           #+#    #+#             */
-/*   Updated: 2024/07/17 16:57:51 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/07/17 17:32:28 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ void	my_pixel_put_img(t_fdf *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
+void	isometric(float *x, float *y, int z)
+{
+	*x = (*x - *y) * cos(0.8);
+	*y = (*x + *y) * sin(0.8) - z;
+}
+
 // to fix with z_matrix
 void	brasenham(float x, float y, float x1, float y1, t_fdf *data) // [1:1] [3:12]
 {
@@ -47,8 +53,9 @@ void	brasenham(float x, float y, float x1, float y1, t_fdf *data) // [1:1] [3:12
 	x1 *= data->zoom;
 	y1 *= data->zoom;
 	///////////color/////////////////
-	data->color = (z) ? 0xFF0000 : 0xFFFFFF;
-	x_step = x1 - x; 
+	data->color = (z || z1) ? 0xFF0000 : 0xFFFFFF;
+	///////////ISOMETRIC 3D//////////
+	x_step = x1 - x;
 	y_step = y1 - y;
 	x_step /= max_of(absolute(x_step), absolute(y_step));
 	y_step /= max_of(absolute(x_step), absolute(y_step));

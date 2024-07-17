@@ -1,0 +1,6 @@
+Handle the color with parsing
+Implement closing by X or ESC
+adapt zoom and window size compared with map size
+fix leaks
+implement translation
+implement zoom
