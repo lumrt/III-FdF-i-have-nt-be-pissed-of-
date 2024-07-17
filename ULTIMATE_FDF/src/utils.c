@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 14:22:35 by lumaret           #+#    #+#             */
-/*   Updated: 2024/07/17 14:53:05 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/07/17 15:12:46 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,11 @@ int	ft_count(char *str, char characters)
 			i++;
 	}
 	return (count);
+}
+
+int	max_of(int a, int b)
+{
+	if (a >= b)
+		return (a);
+	return (b);
 }

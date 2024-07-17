@@ -6,7 +6,7 @@
 #    By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/11 17:07:29 by jsommet           #+#    #+#              #
-#    Updated: 2024/07/17 14:46:59 by lumaret          ###   ########.fr        #
+#    Updated: 2024/07/17 15:41:36 by lumaret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ INCDIR      = inc
 LIBFTDIR    = $(INCDIR)/libft
 LIBFT       = $(LIBFTDIR)/libft.a
 
-SRC         = main.c utils.c parsing.c get_next_line.c get_next_line_utils.c
+SRC         = main.c utils.c parsing.c draw_lines.c get_next_line.c get_next_line_utils.c
 
 # Conditional inclusion based on the platform
 MLXDIR   = $(INCDIR)/mlx
