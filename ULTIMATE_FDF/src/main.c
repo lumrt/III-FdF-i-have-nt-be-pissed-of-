@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 14:05:19 by lumaret           #+#    #+#             */
-/*   Updated: 2024/07/17 16:59:37 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/07/17 18:01:04 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int ac, char **av)
 	data->img = mlx_new_image(data->mlx_ptr, 1920, 1080);
 	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, &data->line_length, &data->endian);
 	// brasenham(50, 100, 20, 10, data);
-	data->zoom = 10;
+	data->zoom = 20;
 	draw(data);
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img, 0, 0);
 	mlx_key_hook(data->win_ptr, get_key, NULL);

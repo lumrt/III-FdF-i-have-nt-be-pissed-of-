@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 14:58:36 by lumaret           #+#    #+#             */
-/*   Updated: 2024/07/17 17:32:28 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/07/17 18:01:53 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	my_pixel_put_img(t_fdf *data, int x, int y, int color)
 void	isometric(float *x, float *y, int z)
 {
 	*x = (*x - *y) * cos(0.8);
-	*y = (*x + *y) * sin(0.8) - z;
+	*y = (*x + z) * sin(0.8) - z;
 }
 
 // to fix with z_matrix
@@ -52,16 +52,22 @@ void	brasenham(float x, float y, float x1, float y1, t_fdf *data) // [1:1] [3:12
 	y *= data->zoom;
 	x1 *= data->zoom;
 	y1 *= data->zoom;
+	x += 250;
+	y += 150;	
+	x1 += 250;	
+	y1 += 150;	
 	///////////color/////////////////
 	data->color = (z || z1) ? 0xFF0000 : 0xFFFFFF;
-	///////////ISOMETRIC 3D//////////
 	x_step = x1 - x;
 	y_step = y1 - y;
+	///////////ISOMETRIC 3D//////////
+	// isometric(&x, &y , z);
+	// isometric(&x1, &y1 , z1);	
 	x_step /= max_of(absolute(x_step), absolute(y_step));
 	y_step /= max_of(absolute(x_step), absolute(y_step));
 	while ((int)(x - x1) || (int)(y - y1))
 	{
-		printf("\n\n x = %f, y = %f", x, y);
+		// printf("\n\n xiso = %f, yiso = %f", x, y);
 		my_pixel_put_img(data, x, y, data->color);
 		x += x_step;
 		y += y_step;
