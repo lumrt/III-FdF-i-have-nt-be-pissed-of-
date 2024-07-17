@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:46:18 by lucas             #+#    #+#             */
-/*   Updated: 2024/07/17 16:43:18 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/07/17 16:46:49 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_fdf
 	int	line_length;
 	int	endian;
 	int	zoom;
+	unsigned int	color;
 	void	*mlx_ptr;
 	void	*win_ptr;
 }	t_fdf;
